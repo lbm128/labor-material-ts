@@ -35,11 +35,11 @@ const Home = () => {
       <div className='history-chart'>
         <div>
           <p><b>Labor History</b></p>
-          {laborHistory.map((entry, i) => <p key={i}>${entry}</p>)}
+          {laborHistory.map((entry: string, i: number) => <p key={i}>${entry}</p>)}
         </div>
         <div>
           <p><b>Material History</b></p>
-          {materialHistory.map((entry, i) => <p key={i}>{entry} gallons</p>)}
+          {materialHistory.map((entry: string, i: number) => <p key={i}>{entry} gallons</p>)}
         </div>
       </div>
     </div>

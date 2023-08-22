@@ -7,7 +7,7 @@ const Material = () => {
   const [length, setLength] = useState(0);
   const [width, setWidth] = useState(0);
   const [sqftGal, setSqftGal] = useState(0);
-  const [calculated, setCalculated] = useState(0);
+  const [calculated, setCalculated] = useState('0.00');
 
   const dispatch = useDispatch();
 
@@ -25,16 +25,22 @@ const Material = () => {
     setCalculated(0);
   }
 
-  const handleLength = (e) => {
-    setLength(e.target.value);
+  const handleLength = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+
+    setLength(Number(target.value));
   };
 
-  const handleWidth = (e) => {
-    setWidth(e.target.value);
+  const handleWidth = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+
+    setWidth(Number(target.value));
   };
 
-  const handleSqftGal = (e) => {
-    setSqftGal(e.target.value);
+  const handleSqftGal = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+
+    setSqftGal(Number(target.value));
   };
 
   return (

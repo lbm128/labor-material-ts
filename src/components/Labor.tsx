@@ -7,12 +7,12 @@ const Labor = () => {
   const [length, setLength] = useState(0);
   const [width, setWidth] = useState(0);
   const [price, setPrice] = useState(0);
-  const [calculated, setCalculated] = useState(0);
+  const [calculated, setCalculated] = useState('0.00');
 
   const dispatch = useDispatch();
 
   const handleCalculate = () => {
-    const calculatedTotal = (length * width * price).toFixed(2);
+    const calculatedTotal: string = (length * width * price).toFixed(2);
     setCalculated(calculatedTotal);
 
     dispatch(addLabor({calculatedTotal}));
@@ -22,19 +22,25 @@ const Labor = () => {
     setLength(0);
     setWidth(0);
     setPrice(0);
-    setCalculated(0);
+    setCalculated('0.00');
   }
 
-  const handleLength = (e) => {
-    setLength(e.target.value);
+  const handleLength = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+    
+    setLength(Number(target.value));
   };
 
-  const handleWidth = (e) => {
-    setWidth(e.target.value);
+  const handleWidth = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+    
+    setWidth(Number(target.value));
   };
 
-  const handlePrice = (e) => {
-    setPrice(e.target.value);
+  const handlePrice = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+
+    setPrice(Number(target.value));
   };
 
   return (
