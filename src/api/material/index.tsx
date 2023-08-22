@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const addMaterialApi = ({ calculatedTotal }) => {
+export const addMaterialApi = ({ calculatedTotal }: any) => {
   return axios.post('/addMaterial', { calculatedTotal });
 };
 
