@@ -1,12 +1,29 @@
 import { materialActions } from "../slices/materialSlice";
 import { addMaterialApi, loadMaterialApi } from "../../api/material";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const addMaterial = ({ calculatedTotal }: any) => (dispatch: any) => {
-  addMaterialApi({ calculatedTotal })
-    .then(({ data }) => { dispatch(materialActions.addMaterialHistory(data)) });
-};
+export const addMaterialAsyncThunk = createAsyncThunk<any, string>(
+  'material/addLabor',
+  (calculatedTotal, { dispatch, getState }) => {
+    addMaterialApi({ calculatedTotal })
+      .then(({ data }) => { dispatch(materialActions.addMaterialHistory(data)) });
+  }
+);
 
-export const loadMaterial = () => (dispatch: any) => {
-  loadMaterialApi()
-    .then(({ data }) => dispatch(materialActions.loadMaterialHistory({ materialHistory: data })));
-};
+export const loadMaterialAsyncThunk = createAsyncThunk<any, undefined>(
+  'material/addMaterial',
+  (_, { dispatch, getState }) => {
+    loadMaterialApi()
+      .then(({ data }) => dispatch(materialActions.loadMaterialHistory(data)));
+  }
+);
+
+// export const addMaterial = ({ calculatedTotal }: any) => (dispatch: any) => {
+//   addMaterialApi({ calculatedTotal })
+//     .then(({ data }) => { dispatch(materialActions.addMaterialHistory(data)) });
+// };
+
+// export const loadMaterial = () => (dispatch: any) => {
+//   loadMaterialApi()
+//     .then(({ data }) => dispatch(materialActions.loadMaterialHistory({ materialHistory: data })));
+// };

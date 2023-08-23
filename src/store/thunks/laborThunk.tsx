@@ -1,15 +1,29 @@
 import { laborActions } from "../slices/laborSlice";
 import { addLaborApi, loadLaborApi } from "../../api/labor";
-// import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-// export const addLaborAsyncThunk = createAsyncThunk<any, undefined,
+export const addLaborAsyncThunk = createAsyncThunk<any, string>(
+  'labor/addLabor',
+  (calculatedTotal, { dispatch, getState }) => {
+    addLaborApi({ calculatedTotal })
+      .then(({ data }) => { dispatch(laborActions.addLaborHistory(data)) });
+  }
+);
 
-export const addLabor = ({ calculatedTotal }: any) => (dispatch: any) => {
-  addLaborApi({ calculatedTotal })
-    .then(({ data }) => { dispatch(laborActions.addLaborHistory(data)) });
-};
+export const loadLaborAsyncThunk = createAsyncThunk<any, undefined>(
+  'labor/addLabor',
+  (_, { dispatch, getState }) => {
+    loadLaborApi()
+      .then(({ data }) => dispatch(laborActions.loadLaborHistory(data)));
+  }
+);
 
-export const loadLabor = () => (dispatch: any) => {
-  loadLaborApi()
-    .then(({ data }) => dispatch(laborActions.loadLaborHistory({ laborHistory: data })));
-};
+// export const addLabor = ({ calculatedTotal }: any) => (dispatch: any) => {
+//   addLaborApi({ calculatedTotal })
+//     .then(({ data }) => { dispatch(laborActions.addLaborHistory(data)) });
+// };
+
+// export const loadLabor = () => (dispatch: any) => {
+//   loadLaborApi()
+//     .then(({ data }) => dispatch(laborActions.loadLaborHistory(data)));
+// };

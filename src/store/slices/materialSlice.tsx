@@ -1,14 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+
+interface MaterialState {
+  materialHistory: string[]
+};
+
+export const initialState: MaterialState = {
+  materialHistory: []
+}
 
 export const materialSlice = createSlice({
     name: 'material',
-    initialState: { materialHistory: [''] },
+    initialState,
     reducers: {
-      loadMaterialHistory (state, action) {
-        const { materialHistory } = action.payload;
-        state.materialHistory = materialHistory;
+      loadMaterialHistory (state, action: PayloadAction<string[]>) {
+        // const { materialHistory } = action.payload;
+        state.materialHistory = action.payload;//materialHistory;
       },
-      addMaterialHistory (state, action) {
+      addMaterialHistory (state, action: PayloadAction<string>) {
         state.materialHistory.push(action.payload);
       }
     }
