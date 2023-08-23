@@ -5,6 +5,7 @@ import { useEffect } from "react";
 // import { loadMaterial } from "../store/thunks/materialThunk";
 import { loadLaborAsyncThunk } from "../store/thunks/laborThunk";
 import { loadMaterialAsyncThunk } from "../store/thunks/materialThunk";
+import { AppDispatch } from "../store";
 
 const Home = () => {
   const laborHistory = useSelector(({ labor }) => {
@@ -14,7 +15,7 @@ const Home = () => {
     return material.materialHistory;
   });
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(loadLaborAsyncThunk());

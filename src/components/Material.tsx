@@ -1,7 +1,8 @@
 import { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { addMaterial } from '../store/thunks/materialThunk';
+import { addMaterialAsyncThunk } from '../store/thunks/materialThunk';
+import { AppDispatch } from '../store';
 
 const Material = () => {
   const [length, setLength] = useState(0);
@@ -9,20 +10,20 @@ const Material = () => {
   const [sqftGal, setSqftGal] = useState(0);
   const [calculated, setCalculated] = useState('0.00');
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleCalculate = () => {
     const calculatedTotal = ((length * width) / sqftGal).toFixed(2);
     setCalculated(calculatedTotal);
 
-    dispatch(addMaterial({calculatedTotal}));
+    dispatch(addMaterialAsyncThunk(calculatedTotal));
   };
 
   const handleReset = () => {
     setLength(0);
     setWidth(0);
     setSqftGal(0);
-    setCalculated(0);
+    setCalculated('0.00');
   }
 
   const handleLength = (e: Event) => {

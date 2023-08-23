@@ -1,7 +1,8 @@
 import { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { addLabor } from '../store/thunks/laborThunk';
+import { addLaborAsyncThunk } from '../store/thunks/laborThunk';
+import { AppDispatch } from '../store';
 
 const Labor = () => {
   const [length, setLength] = useState(0);
@@ -9,13 +10,13 @@ const Labor = () => {
   const [price, setPrice] = useState(0);
   const [calculated, setCalculated] = useState('0.00');
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleCalculate = () => {
     const calculatedTotal: string = (length * width * price).toFixed(2);
     setCalculated(calculatedTotal);
 
-    dispatch(addLabor({calculatedTotal}));
+    dispatch(addLaborAsyncThunk(calculatedTotal));
   };
 
   const handleReset = () => {
