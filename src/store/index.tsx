@@ -1,6 +1,5 @@
-import { PreloadedState, combineReducers, configureStore, createSlice } from '@reduxjs/toolkit';
+import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import thunk from 'redux-thunk';
 import { laborSlice } from './slices/laborSlice';
 import { materialSlice } from './slices/materialSlice';
 
@@ -20,15 +19,10 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
     devTools: isLocal,
     middleware: (getDefaultMiddleware) => {
       if (isLocal) return getDefaultMiddleware().concat(logger);
-      return getDefaultMiddleware({
-      //   serializableCheck: {
-      //     ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      //   },
-      });
+      return getDefaultMiddleware();
     },
   });
-  // const persistor = persistStore(store);
-  return { store/*, persistor*/ };
+  return { store };
 };
 
 export type AppStore = ReturnType<typeof setupStore>['store'];

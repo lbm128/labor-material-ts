@@ -17,13 +17,3 @@ export const loadLaborAsyncThunk = createAsyncThunk<any, undefined>(
       .then(({ data }) => dispatch(laborActions.loadLaborHistory(data)));
   }
 );
-
-// export const addLabor = ({ calculatedTotal }: any) => (dispatch: any) => {
-//   addLaborApi({ calculatedTotal })
-//     .then(({ data }) => { dispatch(laborActions.addLaborHistory(data)) });
-// };
-
-// export const loadLabor = () => (dispatch: any) => {
-//   loadLaborApi()
-//     .then(({ data }) => dispatch(laborActions.loadLaborHistory(data)));
-// };

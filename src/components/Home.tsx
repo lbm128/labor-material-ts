@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
-// import { loadLabor } from "../store/thunks/laborThunk";
-// import { loadMaterial } from "../store/thunks/materialThunk";
 import { loadLaborAsyncThunk } from "../store/thunks/laborThunk";
 import { loadMaterialAsyncThunk } from "../store/thunks/materialThunk";
 import { AppDispatch } from "../store";
@@ -20,8 +18,6 @@ const Home = () => {
   useEffect(() => {
     dispatch(loadLaborAsyncThunk());
     dispatch(loadMaterialAsyncThunk());
-    // dispatch(loadLabor());
-    // dispatch(loadMaterial());
   }, []);
 
   return (

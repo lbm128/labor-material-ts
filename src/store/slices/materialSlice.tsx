@@ -13,8 +13,7 @@ export const materialSlice = createSlice({
     initialState,
     reducers: {
       loadMaterialHistory (state, action: PayloadAction<string[]>) {
-        // const { materialHistory } = action.payload;
-        state.materialHistory = action.payload;//materialHistory;
+        state.materialHistory = action.payload;
       },
       addMaterialHistory (state, action: PayloadAction<string>) {
         state.materialHistory.push(action.payload);

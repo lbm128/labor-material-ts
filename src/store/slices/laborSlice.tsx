@@ -13,8 +13,7 @@ export const laborSlice = createSlice({
     initialState,
     reducers: {
       loadLaborHistory (state, action: PayloadAction<string[]>) {
-        // const { laborHistory } = action.payload;
-        state.laborHistory = action.payload;//laborHistory;
+        state.laborHistory = action.payload;
       },
       addLaborHistory (state, action: PayloadAction<string>) {
         state.laborHistory.push(action.payload);
