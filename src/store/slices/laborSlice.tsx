@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const laborSlice = createSlice({
     name: 'labor',
-    initialState: { laborHistory: [] },
+    initialState: { laborHistory: [''] },
     reducers: {
       loadLaborHistory (state, action) {
         const { laborHistory } = action.payload;

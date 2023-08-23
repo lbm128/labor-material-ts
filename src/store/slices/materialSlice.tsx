@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const materialSlice = createSlice({
     name: 'material',
-    initialState: { materialHistory: [] },
+    initialState: { materialHistory: [''] },
     reducers: {
       loadMaterialHistory (state, action) {
         const { materialHistory } = action.payload;

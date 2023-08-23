@@ -53,15 +53,15 @@ const Material = () => {
       <h1>Material</h1>
       <div className="input-container">
         <p>sqft/gallon</p>
-        <input value={sqftGal} onChange={handleSqftGal} />
+        <input value={sqftGal} onChange={() => handleSqftGal} />
       </div>
       <div className="input-container">
         <p>Length</p>
-        <input value={length} onChange={handleLength} />
+        <input value={length} onChange={() => handleLength} />
       </div>
       <div className="input-container">
         <p>Width</p>
-        <input value={width} onChange={handleWidth} />
+        <input value={width} onChange={() => handleWidth} />
       </div>
       <button onClick={handleCalculate}>Calculate</button>
       <button onClick={handleReset}>Reset</button>
