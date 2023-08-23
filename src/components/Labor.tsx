@@ -14,6 +14,7 @@ const Labor = () => {
 
   const handleCalculate = () => {
     const calculatedTotal: string = (length * width * price).toFixed(2);
+    console.log(calculatedTotal);
     setCalculated(calculatedTotal);
 
     dispatch(addLaborAsyncThunk(calculatedTotal));
@@ -54,15 +55,15 @@ const Labor = () => {
       <h1>Labor</h1>
       <div className="input-container">
         <p>$/sqft</p>
-        <input value={price} onChange={() => handlePrice} />
+        <input value={price} onChange={(e: any) => handlePrice(e)} />
       </div>
       <div className="input-container">
         <p>Length</p>
-        <input value={length} onChange={() => handleLength} />
+        <input value={length} onChange={(e: any) => handleLength(e)} />
       </div>
       <div className="input-container">
         <p>Width</p>
-        <input value={width} onChange={() => handleWidth} />
+        <input value={width} onChange={(e: any) => handleWidth(e)} />
       </div>
       <button onClick={handleCalculate}>Calculate</button>
       <button onClick={handleReset}>Reset</button>
