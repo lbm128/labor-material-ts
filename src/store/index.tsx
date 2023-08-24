@@ -28,12 +28,3 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
 
 export type AppStore = ReturnType<typeof setupStore>['store'];
 export type AppDispatch = AppStore['dispatch'];
-
-// export default configureStore({
-//   reducer: {
-//     labor: laborSlice.reducer,
-//     material: materialSlice.reducer
-//   },
-//   middleware: [logger, thunk],
-//   devTools: true
-// });
