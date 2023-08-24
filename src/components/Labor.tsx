@@ -49,12 +49,7 @@ const Labor = () => {
 
   return (
     <div>
-      <div className='nav-link-container'>
-        <Link to='/' className='swdc-button swdc-button--text nav-link' data-text='Home'>
-          <span>Back Home</span>
-        </Link>
-      </div>
-      <h1 className='swdc-typeset-display-2'>Labor</h1>
+      <h1 className='swdc-typeset-display-1' style={{margin: '30px 0'}}>Labor</h1>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>$/sqft</p>
         <Input
@@ -79,17 +74,24 @@ const Labor = () => {
           style={{ width: 'initial' }}
         />
       </div>
-      <Button
-        variant='filled'
-        onClick={handleCalculate}>
-          Calculate
-      </Button>
-      <Button
-        variant='outlined'
-        onClick={handleReset}>
-          Reset
-      </Button>
+      <div style={{margin: '30px 0'}}>
+        <Button
+          variant='filled'
+          onClick={handleCalculate}>
+            Calculate
+        </Button>
+        <Button
+          variant='outlined'
+          onClick={handleReset}>
+            Reset
+        </Button>
+      </div>
       <p className='swdc-typeset-display-3'>Labor price: ${calculated}</p>
+      <div className='nav-link-container'>
+        <Link to='/' className='swdc-button swdc-button--text nav-link' data-text='Home'>
+          <span>Back Home</span>
+        </Link>
+      </div>
     </div>
   );
 };
