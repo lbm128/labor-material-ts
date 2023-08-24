@@ -37,15 +37,4 @@ app.post('/addMaterial', (req, res) => {
   res.json(calculatedTotal);
 });
 
-app.delete('/todo', (req, res) => {
-  const { id } = req.body;
-  if (!id) {
-    return res.status(400).end();
-  }
-
-  todos = todos.filter(todo => todo.id !== id);
-
-  res.status(204).end();
-});
-
 app.listen(port, () => console.log(`Server listening at port ${port}`));
