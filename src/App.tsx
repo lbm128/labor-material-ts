@@ -12,7 +12,7 @@ const { store } = setupStore();
 
 function App() {
   return (
-    <div className='App'>
+    <div className='swdc-container-md App'>
       <Provider store={store}>
         <Router>
           <Routes>

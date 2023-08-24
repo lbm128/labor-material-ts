@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className='swdc-typeset-display-1'>Home</h1>
+      <h1 className='swdc-typeset-display-1' style={{marginTop: '30px'}}>Home</h1>
       <div className='nav-link-container'>
         <Link to='/labor' className='swdc-button swdc-button--filled' data-text='Home'>
           <span>Labor</span>
