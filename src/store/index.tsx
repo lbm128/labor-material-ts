@@ -1,7 +1,7 @@
 import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import { laborSlice } from './slices/laborSlice';
-import { materialSlice } from './slices/materialSlice';
+import { laborSlice } from 'store/slices/laborSlice';
+import { materialSlice } from 'store/slices/materialSlice';
 
 const isLocal = process.env.NODE_ENV === 'development';
 

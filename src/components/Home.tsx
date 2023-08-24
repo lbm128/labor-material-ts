@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
-import { loadLaborAsyncThunk } from "../store/thunks/laborThunk";
-import { loadMaterialAsyncThunk } from "../store/thunks/materialThunk";
-import { AppDispatch } from "../store";
+import { loadLaborAsyncThunk } from "store/thunks/laborThunk";
+import { loadMaterialAsyncThunk } from "store/thunks/materialThunk";
+import { AppDispatch } from "store";
 
 const Home = () => {
   const laborHistory = useSelector(({ labor }) => {

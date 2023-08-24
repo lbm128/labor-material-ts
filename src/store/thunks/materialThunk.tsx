@@ -1,5 +1,5 @@
-import { materialActions } from "../slices/materialSlice";
-import { addMaterialApi, loadMaterialApi } from "../../api/material";
+import { materialActions } from "store/slices/materialSlice";
+import { addMaterialApi, loadMaterialApi } from "api/material";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const addMaterialAsyncThunk = createAsyncThunk<any, string>(

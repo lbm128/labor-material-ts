@@ -1,8 +1,8 @@
 import { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { addMaterialAsyncThunk } from '../store/thunks/materialThunk';
-import { AppDispatch } from '../store';
+import { addMaterialAsyncThunk } from 'store/thunks/materialThunk';
+import { AppDispatch } from 'store';
 
 const Material = () => {
   const [length, setLength] = useState(0);

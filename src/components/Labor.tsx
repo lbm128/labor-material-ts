@@ -1,8 +1,8 @@
 import { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { addLaborAsyncThunk } from '../store/thunks/laborThunk';
-import { AppDispatch } from '../store';
+import { addLaborAsyncThunk } from 'store/thunks/laborThunk';
+import { AppDispatch } from 'store';
 
 const Labor = () => {
   const [length, setLength] = useState(0);

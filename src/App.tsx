@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from './components/Home';
-import Labor from './components/Labor';
-import Material from './components/Material';
+import Home from 'components/Home';
+import Labor from 'components/Labor';
+import Material from 'components/Material';
 
 import { Provider } from 'react-redux';
-import { setupStore } from './store';
+import { setupStore } from 'store';
 // import store from './store';
 const { store } = setupStore();
 
