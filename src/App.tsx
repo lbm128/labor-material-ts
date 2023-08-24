@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import 'App.css';
 import Home from 'components/Home';
@@ -12,13 +12,13 @@ const { store } = setupStore();
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Provider store={store}>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/labor" element={<Labor />} />
-            <Route path="/material" element={<Material />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/labor' element={<Labor />} />
+            <Route path='/material' element={<Material />} />
           </Routes>
         </Router>
       </Provider>

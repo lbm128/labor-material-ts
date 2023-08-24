@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import { loadLaborAsyncThunk } from "store/thunks/laborThunk";
-import { loadMaterialAsyncThunk } from "store/thunks/materialThunk";
-import { AppDispatch } from "store";
+import { loadLaborAsyncThunk } from 'store/thunks/laborThunk';
+import { loadMaterialAsyncThunk } from 'store/thunks/materialThunk';
+import { AppDispatch } from 'store';
 
 const Home = () => {
   const laborHistory = useSelector(({ labor }) => {
@@ -23,25 +23,26 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
-      <div className="nav-link-container">
-        <Link to="/labor" className="nav-link" data-text="Home">
+      <h1 className='swdc-typeset-display-1'>Home</h1>
+      <div className='nav-link-container'>
+        <Link to='/labor' className='swdc-button swdc-button--filled' data-text='Home'>
           <span>Labor</span>
         </Link>
       </div>
-      <div className="nav-link-container">
-        <Link to="/material" className="nav-link" data-text="Home">
+      <div className='nav-link-container'>
+        <Link to='/material' className='swdc-button swdc-button--outlined' data-text='Home'>
           <span>Material</span>
         </Link>
       </div>
+
       <div className='history-chart'>
         <div>
-          <p><b>Labor History</b></p>
-          {laborHistory.map((entry: string, i: number) => <p key={i}>${entry}</p>)}
+          <p className='swdc-typeset-ui-2'><b>Labor History</b></p>
+          {laborHistory.map((entry: string, i: number) => <p className='swdc-typeset-ui-3' key={i}>${entry}</p>)}
         </div>
         <div>
-          <p><b>Material History</b></p>
-          {materialHistory.map((entry: string, i: number) => <p key={i}>{entry} gallons</p>)}
+          <p className='swdc-typeset-ui-2'><b>Material History</b></p>
+          {materialHistory.map((entry: string, i: number) => <p className='swdc-typeset-ui-3' key={i}>{entry} gallons</p>)}
         </div>
       </div>
     </div>

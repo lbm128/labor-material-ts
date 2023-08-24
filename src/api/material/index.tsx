@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const addMaterialApi = ({ calculatedTotal }: any) => {
   return axios.post('/addMaterial', { calculatedTotal });

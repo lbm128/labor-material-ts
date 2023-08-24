@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Button, Input } from '@prism/dropcloth';
 
 import { addMaterialAsyncThunk } from 'store/thunks/materialThunk';
 import { AppDispatch } from 'store';
@@ -47,27 +48,46 @@ const Material = () => {
 
   return (
     <div>
-      <div className="nav-link-container">
-        <Link to="/" className="nav-link" data-text="Home">
+      <div className='nav-link-container'>
+        <Link to='/' className='swdc-button swdc-button--text nav-link' data-text='Home'>
           <span>Back Home</span>
         </Link>
       </div>
-      <h1>Material</h1>
-      <div className="input-container">
-        <p>sqft/gallon</p>
-        <input value={sqftGal} onChange={(e: any) => handleSqftGal(e)} />
+      <h1 className='swdc-typeset-display-2'>Material</h1>
+      <div className='input-container'>
+        <p className='swdc-typeset-ui-2'>sqft/gallon</p>
+        <Input
+          value={sqftGal}
+          onChange={(e: any) => handleSqftGal(e)}
+          style={{ width: 'initial' }}
+        />
       </div>
-      <div className="input-container">
-        <p>Length</p>
-        <input value={length} onChange={(e: any) => handleLength(e)} />
+      <div className='input-container'>
+        <p className='swdc-typeset-ui-2'>Length</p>
+        <Input
+          value={length}
+          onChange={(e: any) => handleLength(e)}
+          style={{ width: 'initial' }}
+        />
       </div>
-      <div className="input-container">
-        <p>Width</p>
-        <input value={width} onChange={(e: any) => handleWidth(e)} />
-      </div>
-      <button onClick={handleCalculate}>Calculate</button>
-      <button onClick={handleReset}>Reset</button>
-      <p>{calculated} gallons required</p>
+      <div className='input-container'>
+        <p className='swdc-typeset-ui-2'>Width</p>
+        <Input
+          value={width}
+          onChange={(e: any) => handleWidth(e)}
+          style={{ width: 'initial' }}
+        />      </div>
+      <Button
+        variant='filled'
+        onClick={handleCalculate}>
+          Calculate
+      </Button>
+      <Button
+        variant='outlined'
+        onClick={handleCalculate}>
+          Reset
+      </Button>
+      <p className='swdc-typeset-display-3'>{calculated} gallons required</p>
     </div>
   );
 };
