@@ -1,5 +1,6 @@
 import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
+
 import { laborSlice } from 'store/slices/laborSlice';
 import { materialSlice } from 'store/slices/materialSlice';
 

@@ -1,6 +1,7 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
 import { laborActions } from "store/slices/laborSlice";
 import { addLaborApi, loadLaborApi } from "api/labor";
-import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const addLaborAsyncThunk = createAsyncThunk<any, string>(
   'labor/addLabor',

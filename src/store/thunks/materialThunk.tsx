@@ -1,6 +1,7 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
 import { materialActions } from "store/slices/materialSlice";
 import { addMaterialApi, loadMaterialApi } from "api/material";
-import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const addMaterialAsyncThunk = createAsyncThunk<any, string>(
   'material/addLabor',
