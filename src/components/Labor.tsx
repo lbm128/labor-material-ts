@@ -86,7 +86,7 @@ const Labor = () => {
       </Button>
       <Button
         variant='outlined'
-        onClick={handleCalculate}>
+        onClick={handleReset}>
           Reset
       </Button>
       <p className='swdc-typeset-display-3'>Labor price: ${calculated}</p>
