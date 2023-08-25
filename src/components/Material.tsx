@@ -91,7 +91,7 @@ const Material = () => {
         <p className='swdc-typeset-ui-2'>Width</p>
         <Input value={width} onChange={(e: any) => handleWidth(e)} style={{ width: 'initial' }} />
       </div>
-      <div style={{ margin: '30px 0' }}>
+      <div className='swdc-flex swdc-justify-center' style={{ margin: '30px auto', gap: '20px' }}>
         <Button variant='filled' onClick={handleCalculate}>
           Calculate
         </Button>

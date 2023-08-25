@@ -27,17 +27,17 @@ const Labor = () => {
     setWidth(0);
     setPrice(0);
     setCalculated('0.00');
-  }
+  };
 
   const handleLength = (e: Event) => {
     const target = e.target as HTMLInputElement;
-    
+
     setLength(Number(target.value));
   };
 
   const handleWidth = (e: Event) => {
     const target = e.target as HTMLInputElement;
-    
+
     setWidth(Number(target.value));
   };
 
@@ -49,15 +49,13 @@ const Labor = () => {
 
   return (
     <div>
-      <Menu placement="bottom-start">
-        <MenuTrigger asChild  style={{marginTop: '30px'}}>
-          <Button variant="outlined">
-            Menu
-          </Button>
+      <Menu placement='bottom-start'>
+        <MenuTrigger asChild style={{ marginTop: '30px' }}>
+          <Button variant='outlined'>Menu</Button>
         </MenuTrigger>
-        <MenuContent className="test-menu" style={{padding: "15px"}}>
-          <div className='swdc-flex swdc-flex-col' style={{gap: "15px"}}>
-            <div className='nav-link-container' >
+        <MenuContent className='test-menu' style={{ padding: '15px' }}>
+          <div className='swdc-flex swdc-flex-col' style={{ gap: '15px' }}>
+            <div className='nav-link-container'>
               <Link to='/' className='swdc-button swdc-button--filled' data-text='Home'>
                 <span>Home</span>
               </Link>
@@ -75,41 +73,27 @@ const Labor = () => {
           </div>
         </MenuContent>
       </Menu>
-      <h1 className='swdc-typeset-display-1' style={{margin: '50px 0 30px 0'}}>Labor</h1>
+      <h1 className='swdc-typeset-display-1' style={{ margin: '50px 0 30px 0' }}>
+        Labor
+      </h1>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>$/sqft</p>
-        <Input
-          value={price}
-          onChange={(e: any) => handlePrice(e)}
-          style={{ width: 'initial' }}
-        />
+        <Input value={price} onChange={(e: any) => handlePrice(e)} style={{ width: 'initial' }} />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Length</p>
-        <Input
-          value={length}
-          onChange={(e: any) => handleLength(e)}
-          style={{ width: 'initial' }}
-        />
+        <Input value={length} onChange={(e: any) => handleLength(e)} style={{ width: 'initial' }} />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Width</p>
-        <Input
-          value={width}
-          onChange={(e: any) => handleWidth(e)}
-          style={{ width: 'initial' }}
-        />
+        <Input value={width} onChange={(e: any) => handleWidth(e)} style={{ width: 'initial' }} />
       </div>
-      <div style={{margin: '30px 0'}}>
-        <Button
-          variant='filled'
-          onClick={handleCalculate}>
-            Calculate
+      <div className='swdc-flex swdc-justify-center' style={{ margin: '30px auto', gap: '20px' }}>
+        <Button variant='filled' onClick={handleCalculate}>
+          Calculate
         </Button>
-        <Button
-          variant='outlined'
-          onClick={handleReset}>
-            Reset
+        <Button variant='outlined' onClick={handleReset}>
+          Reset
         </Button>
       </div>
       <p className='swdc-typeset-display-3'>Labor price: ${calculated}</p>
