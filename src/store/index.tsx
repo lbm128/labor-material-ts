@@ -8,7 +8,7 @@ const isLocal = process.env.NODE_ENV === 'development';
 
 export const rootReducer = combineReducers({
   labor: laborSlice.reducer,
-  material: materialSlice.reducer
+  material: materialSlice.reducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

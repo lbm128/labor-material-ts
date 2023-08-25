@@ -6,4 +6,4 @@ export const addMaterialApi = ({ calculatedTotal }: any) => {
 
 export const loadMaterialApi = () => {
   return axios.get('/materialHistory');
-}
+};

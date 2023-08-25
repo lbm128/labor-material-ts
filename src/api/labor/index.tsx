@@ -6,4 +6,4 @@ export const addLaborApi = ({ calculatedTotal }: any) => {
 
 export const loadLaborApi = () => {
   return axios.get('/laborHistory');
-}
+};
