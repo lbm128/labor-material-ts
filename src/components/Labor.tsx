@@ -66,7 +66,7 @@ const Labor = () => {
           </Link>
         </div>
       </div>
-      <h1 className='swdc-typeset-display-1' style={{margin: '30px 0'}}>Labor</h1>
+      <h1 className='swdc-typeset-display-1' style={{margin: '50px 0 30px 0'}}>Labor</h1>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>$/sqft</p>
         <Input

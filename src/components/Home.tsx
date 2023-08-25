@@ -40,7 +40,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <h1 className='swdc-typeset-display-1' style={{marginTop: '30px'}}>Home</h1>
+      <h1 className='swdc-typeset-display-1' style={{margin: '50px 0 30px 0'}}>Home</h1>
       <div className='history-chart'>
         <div>
           <p className='swdc-typeset-ui-2'><b>Labor History</b></p>
