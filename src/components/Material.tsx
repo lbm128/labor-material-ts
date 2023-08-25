@@ -26,7 +26,7 @@ const Material = () => {
     setWidth(0);
     setSqftGal(0);
     setCalculated('0.00');
-  }
+  };
 
   const handleLength = (e: Event) => {
     const target = e.target as HTMLInputElement;
@@ -48,15 +48,13 @@ const Material = () => {
 
   return (
     <div>
-      <Menu placement="bottom-start">
-        <MenuTrigger asChild  style={{marginTop: '30px'}}>
-          <Button variant="outlined">
-            Menu
-          </Button>
+      <Menu placement='bottom-start'>
+        <MenuTrigger asChild style={{ marginTop: '30px' }}>
+          <Button variant='outlined'>Menu</Button>
         </MenuTrigger>
-        <MenuContent className="test-menu" style={{padding: "15px"}}>
-          <div className='swdc-flex swdc-flex-col' style={{gap: "15px"}}>
-            <div className='nav-link-container' >
+        <MenuContent className='test-menu' style={{ padding: '15px' }}>
+          <div className='swdc-flex swdc-flex-col' style={{ gap: '15px' }}>
+            <div className='nav-link-container'>
               <Link to='/' className='swdc-button swdc-button--filled' data-text='Home'>
                 <span>Home</span>
               </Link>
@@ -74,7 +72,9 @@ const Material = () => {
           </div>
         </MenuContent>
       </Menu>
-      <h1 className='swdc-typeset-display-1' style={{margin: '50px 0 30px 0'}}>Material</h1>
+      <h1 className='swdc-typeset-display-1' style={{ margin: '50px 0 30px 0' }}>
+        Material
+      </h1>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>sqft/gallon</p>
         <Input
@@ -85,30 +85,18 @@ const Material = () => {
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Length</p>
-        <Input
-          value={length}
-          onChange={(e: any) => handleLength(e)}
-          style={{ width: 'initial' }}
-        />
+        <Input value={length} onChange={(e: any) => handleLength(e)} style={{ width: 'initial' }} />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Width</p>
-        <Input
-          value={width}
-          onChange={(e: any) => handleWidth(e)}
-          style={{ width: 'initial' }}
-        />
+        <Input value={width} onChange={(e: any) => handleWidth(e)} style={{ width: 'initial' }} />
       </div>
-      <div style={{margin: '30px 0'}}>
-        <Button
-          variant='filled'
-          onClick={handleCalculate}>
-            Calculate
+      <div style={{ margin: '30px 0' }}>
+        <Button variant='filled' onClick={handleCalculate}>
+          Calculate
         </Button>
-        <Button
-          variant='outlined'
-          onClick={handleReset}>
-            Reset
+        <Button variant='outlined' onClick={handleReset}>
+          Reset
         </Button>
       </div>
       <p className='swdc-typeset-display-3'>{calculated} gallons required</p>
