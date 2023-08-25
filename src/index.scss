@@ -21,10 +21,7 @@ code {
 }
 
 .nav-link-container {
-  display: flex;
-  gap: 50px;
-  justify-content: center;
-  margin: 30px;
+  flex-basis: 33%;
 }
 
 .nav-link {
