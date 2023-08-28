@@ -5,11 +5,11 @@ const Navigation = () => {
   return (
     <div className='navigation'>
       <Menu placement='bottom-start'>
-        <MenuTrigger asChild style={{ marginTop: '30px' }}>
+        <MenuTrigger asChild className='swdc-button swdc-button--outlined swdc-mt-[30px]'>
           <Button variant='outlined'>Menu</Button>
         </MenuTrigger>
-        <MenuContent className='test-menu' style={{ padding: '15px' }}>
-          <div className='swdc-flex swdc-flex-col' style={{ gap: '15px' }}>
+        <MenuContent className='test-menu swdc-p-[15px]'>
+          <div className='swdc-flex swdc-flex-col swdc-gap-[15px]'>
             <div className='nav-link-container'>
               <Link to='/' className='swdc-button swdc-button--filled' data-text='Home'>
                 <span>Home</span>
