@@ -50,22 +50,22 @@ const Labor = () => {
   return (
     <div>
       <Navigation />
-      <h1 className='swdc-typeset-display-1' style={{ margin: '50px 0 30px 0' }}>
+      <h1 className='swdc-typeset-display-1 swdc-mt-[50px] swdc-mb-[30px]'>
         Labor
       </h1>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>$/sqft</p>
-        <Input value={price} onChange={(e: any) => handlePrice(e)} style={{ width: 'initial' }} />
+        <Input value={price} onChange={(e: any) => handlePrice(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Length</p>
-        <Input value={length} onChange={(e: any) => handleLength(e)} style={{ width: 'initial' }} />
+        <Input value={length} onChange={(e: any) => handleLength(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Width</p>
-        <Input value={width} onChange={(e: any) => handleWidth(e)} style={{ width: 'initial' }} />
+        <Input value={width} onChange={(e: any) => handleWidth(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
-      <div className='swdc-flex swdc-justify-center' style={{ margin: '30px auto', gap: '20px' }}>
+      <div className='swdc-flex swdc-justify-center swdc-my-[30px] swdc-mx-[auto] swdc-gap-[20px]'>
         <Button variant='filled' onClick={handleCalculate}>
           Calculate
         </Button>

@@ -24,26 +24,26 @@ const Home = () => {
   return (
     <div>
       <Navigation />
-      <h1 className='swdc-typeset-display-1' style={{ margin: '50px 0 30px 0' }}>
+      <h1 className='swdc-typeset-display-1 swdc-mt-[50px] swdc-mb-[30px]'>
         Home
       </h1>
-      <div className='swdc-flex swdc-justify-center' style={{ gap: '50px' }}>
+      <div className='swdc-flex swdc-justify-center swdc-gap-[50px]'>
         <div className='labor-column'>
-          <p className='swdc-typeset-ui-2' style={{ marginBottom: '10px' }}>
+          <p className='swdc-typeset-ui-2 swdc-mb-[10px]'>
             <b>Labor History</b>
           </p>
           {laborHistory.map((entry: string, i: number) => (
-            <p className='swdc-typeset-ui-3' key={i} style={{ padding: '5px' }}>
+            <p className='swdc-typeset-ui-3 swdc-p-[5px]' key={i}>
               ${entry}
             </p>
           ))}
         </div>
         <div className='material-column'>
-          <p className='swdc-typeset-ui-2' style={{ marginBottom: '10px' }}>
+          <p className='swdc-typeset-ui-2 swdc-mb-[10px]'>
             <b>Material History</b>
           </p>
           {materialHistory.map((entry: string, i: number) => (
-            <p className='swdc-typeset-ui-3' key={i} style={{ padding: '5px' }}>
+            <p className='swdc-typeset-ui-3 swdc-p-[5px]' key={i}>
               {entry} gallons
             </p>
           ))}
