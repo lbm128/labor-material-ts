@@ -36,6 +36,26 @@
     "eject": "react-scripts eject",
     "server": "nodemon ./src/server.mjs"
   },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(axios|@prism|style-inject|tslib|swiper|ssr-window)/)"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/**",
+      "!build/**"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "moduleNameMapper": {
+      "swiper/css": "swiper/swiper.min.css"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
