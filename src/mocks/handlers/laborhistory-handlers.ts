@@ -11,3 +11,5 @@ const laborHistoryHandlers = [
     return res(ctx.status(200), ctx.json({ ...getLaborHistoryRespose }));
   }),
 ];
+
+export default laborHistoryHandlers;

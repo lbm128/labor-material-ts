@@ -11,3 +11,5 @@ const materialHistoryHandlers = [
     return res(ctx.status(200), ctx.json({ ...getMaterialHistoryRespose }));
   }),
 ];
+
+export default materialHistoryHandlers;
