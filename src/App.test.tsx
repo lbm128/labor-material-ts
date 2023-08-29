@@ -2,14 +2,15 @@ import { act, screen, waitFor } from '@testing-library/react';
 
 import { renderWithProviders } from 'common/tests/utils';
 
-import Labor from 'components/Labor';
-describe('Labor', () => {
+import AppTwo from './AppTwo';
+
+describe('App', () => {
   test('should render properly', async () => {
-    renderWithProviders(<Labor />);
+    renderWithProviders(<AppTwo />);
 
     await act(
       async () =>
-        await waitFor(() => expect(screen.getByText(/labor/i)).toBeInTheDocument())
+        await waitFor(() => expect(screen.getByText(/luciano/i)).toBeInTheDocument())
     );
   });
 });
