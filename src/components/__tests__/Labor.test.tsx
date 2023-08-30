@@ -13,4 +13,15 @@ describe('Labor', () => {
         await waitFor(() => expect(screen.getByText(/sqft/i)).toBeInTheDocument())
     );
   });
+
+  test('calculate button should not be disabled', async () => {
+    renderWithProviders(<Labor />);
+
+    const calculateButton = screen.getByRole('button', {name: /calculate/i});
+
+    await act(
+      async () =>
+        await waitFor(() => expect(calculateButton).not.toBeDisabled())
+    );
+  });
 });
