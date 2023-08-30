@@ -23,27 +23,30 @@ describe('Home', () => {
   test('should render properly', async () => {
     renderWithProviders(<Home />);
 
-    await act(
-      async () =>
-        await waitFor(() => expect(screen.getByText(/home/i)).toBeInTheDocument())
-    );
+    expect(screen.getByText(/home/i)).toBeInTheDocument();
+    // await act(
+    //   async () =>
+    //     await waitFor(() => expect(screen.getByText(/home/i)).toBeInTheDocument())
+    // );
   });
 
   test('should have 0 material history values', async () => {
     const { store } = renderWithProviders(<Home />, { preloadedState: noMaterialState });
     
-    await act(
-      async () =>
-        await waitFor(() => expect(store.getState().material.materialHistory.length).toBe(0))
-    );
+    expect(store.getState().material.materialHistory.length).toBe(0);
+    // await act(
+    //   async () =>
+    //     await waitFor(() => expect(store.getState().material.materialHistory.length).toBe(0))
+    // );
   });
 
   test('should have 0 labor history values', async () => {
     const { store } = renderWithProviders(<Home />, { preloadedState: noLaborState });
     
-    await act(
-      async () =>
-        await waitFor(() => expect(store.getState().labor.laborHistory.length).toBe(0))
-    );
+    expect(store.getState().labor.laborHistory.length).toBe(0);
+    // await act(
+    //   async () =>
+    //     await waitFor(() => expect(store.getState().labor.laborHistory.length).toBe(0))
+    // );
   });
 });
