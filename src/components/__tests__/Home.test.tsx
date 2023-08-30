@@ -25,7 +25,7 @@ describe('Home', () => {
 
     await act(
       async () =>
-        await waitFor(() => expect(screen.getByText(/Home/i)).toBeInTheDocument())
+        await waitFor(() => expect(screen.getByText(/home/i)).toBeInTheDocument())
     );
   });
 
