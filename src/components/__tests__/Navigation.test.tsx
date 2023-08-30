@@ -2,15 +2,15 @@ import { act, screen, waitFor } from '@testing-library/react';
 
 import { renderWithProviders } from 'common/tests/utils';
 
-import Labor from 'components/Labor';
+import Navigation from 'components/Navigation';
 
-describe('Labor', () => {
+describe('Navigation', () => {
   test('should render properly', async () => {
-    renderWithProviders(<Labor />);
+    renderWithProviders(<Navigation />);
 
     await act(
       async () =>
-        await waitFor(() => expect(screen.getByText(/sqft/i)).toBeInTheDocument())
+        await waitFor(() => expect(screen.getByText(/Menu/i)).toBeInTheDocument())
     );
   });
 });
