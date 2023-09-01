@@ -16,6 +16,8 @@ export const laborSlice = createSlice({
       state.laborHistory = action.payload;
     },
     addLaborHistory(state, action: PayloadAction<string>) {
+      console.log('add labor history action: ', action.payload);
+      console.log('state.laborHistory: ', state.laborHistory);
       state.laborHistory.push(action.payload);
     },
   },
