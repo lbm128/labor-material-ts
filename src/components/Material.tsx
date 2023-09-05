@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { addMaterialAsyncThunk } from 'store/thunks/materialThunk';
 import { AppDispatch } from 'store';
 import Navigation from 'components/Navigation';
-import { Button } from '@prism/dropcloth/dist/components/button/button';
-import { Input } from '@prism/dropcloth/dist/components/input/input';
+// import { Button } from '@prism/dropcloth/dist/components/button/button';
+// import { Input } from '@prism/dropcloth/dist/components/input/input';
 
 const Material = () => {
   const [length, setLength] = useState(0);
@@ -55,23 +55,23 @@ const Material = () => {
       </h1>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>sqft/gallon</p>
-        <Input value={sqftGal} onChange={(e: any) => handleSqftGal(e)} className='swdc-input swdc-w-[initial!important]' />
+        <input value={sqftGal} onChange={(e: any) => handleSqftGal(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Length</p>
-        <Input value={length} onChange={(e: any) => handleLength(e)} className='swdc-input swdc-w-[initial!important]' />
+        <input value={length} onChange={(e: any) => handleLength(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Width</p>
-        <Input value={width} onChange={(e: any) => handleWidth(e)} className='swdc-input swdc-w-[initial!important]' />
+        <input value={width} onChange={(e: any) => handleWidth(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='swdc-flex swdc-justify-center swdc-my-[30px] swdc-mx-[auto] swdc-gap-[20px]'>
-        <Button variant='filled' onClick={handleCalculate}>
+        <button onClick={handleCalculate}>
           Calculate
-        </Button>
-        <Button variant='outlined' onClick={handleReset}>
+        </button>
+        <button onClick={handleReset}>
           Reset
-        </Button>
+        </button>
       </div>
       <p className='swdc-typeset-display-3'>{calculated} gallons required</p>
     </div>

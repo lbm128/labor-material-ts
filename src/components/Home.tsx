@@ -25,7 +25,7 @@ const Home = () => {
     <div>
       <Navigation />
       <h1 className='swdc-typeset-display-1 swdc-mt-[50px] swdc-mb-[30px]'>
-        Home
+        Home Page
       </h1>
       <div className='swdc-flex swdc-justify-center swdc-gap-[50px]'>
         <div className='labor-column'>

@@ -1,4 +1,5 @@
 import { act, screen, waitFor } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 
 
 import { renderWithProviders } from 'common/tests/utils';
@@ -22,19 +23,19 @@ const noLaborState = {
 
 describe('Home', () => {
   test('should render properly', async () => {
-    renderWithProviders(<Home />);
+    renderWithProviders(<BrowserRouter><Home /></BrowserRouter>);
 
-    expect(screen.getByText(/home/i)).toBeInTheDocument();
+    expect(screen.getByText(/page/i)).toBeInTheDocument();
   });
 
   test('should have 0 material history values', async () => {
-    const { store } = renderWithProviders(<Home />, { preloadedState: noMaterialState });
+    const { store } = renderWithProviders(<BrowserRouter><Home /></BrowserRouter>, { preloadedState: noMaterialState });
     
     expect(store.getState().material.materialHistory.length).toBe(0);
   });
 
   test('should have 0 labor history values', async () => {
-    const { store } = renderWithProviders(<Home />, { preloadedState: noLaborState });
+    const { store } = renderWithProviders(<BrowserRouter><Home /></BrowserRouter>, { preloadedState: noLaborState });
     
     expect(store.getState().labor.laborHistory.length).toBe(0);
   });

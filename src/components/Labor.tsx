@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { addLaborAsyncThunk } from 'store/thunks/laborThunk';
 import { AppDispatch } from 'store';
 import Navigation from 'components/Navigation';
-import { Input } from '@prism/dropcloth/dist/components/input/input';
-import { Button } from '@prism/dropcloth/dist/components/button/button';
+// import { Input } from '@prism/dropcloth/dist/components/input/input';
+// import { Button } from '@prism/dropcloth/dist/components/button/button';
 
 const Labor = () => {
   const [length, setLength] = useState(0);
@@ -55,23 +55,23 @@ const Labor = () => {
       </h1>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>$/sqft</p>
-        <Input value={price} onChange={(e: any) => handlePrice(e)} className='swdc-input swdc-w-[initial!important]' />
+        <input value={price} onChange={(e: any) => handlePrice(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Length</p>
-        <Input value={length} onChange={(e: any) => handleLength(e)} className='swdc-input swdc-w-[initial!important]' />
+        <input value={length} onChange={(e: any) => handleLength(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Width</p>
-        <Input value={width} onChange={(e: any) => handleWidth(e)} className='swdc-input swdc-w-[initial!important]' />
+        <input value={width} onChange={(e: any) => handleWidth(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='swdc-flex swdc-justify-center swdc-my-[30px] swdc-mx-[auto] swdc-gap-[20px]'>
-        <Button variant='filled' onClick={handleCalculate}>
+        <button onClick={handleCalculate}>
           Calculate
-        </Button>
-        <Button variant='outlined' onClick={handleReset}>
+        </button>
+        <button onClick={handleReset}>
           Reset
-        </Button>
+        </button>
       </div>
       <p className='swdc-typeset-display-3'>Labor price: ${calculated}</p>
     </div>
