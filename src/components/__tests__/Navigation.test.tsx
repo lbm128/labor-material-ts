@@ -8,9 +8,11 @@ describe('Navigation', () => {
   test('should render properly', async () => {
     renderWithProviders(<Navigation />);
 
-    await act(
-      async () =>
-        await waitFor(() => expect(screen.getByText(/Menu/i)).toBeInTheDocument())
-    );
+    expect(screen.getByText(/Menu/i)).toBeInTheDocument();
+
+    // await act(
+    //   async () =>
+    //     await waitFor(() => expect(screen.getByText(/Menu/i)).toBeInTheDocument())
+    // );
   });
 });

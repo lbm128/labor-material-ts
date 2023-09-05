@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Button, Input } from '@prism/dropcloth';
 
 import { addLaborAsyncThunk } from 'store/thunks/laborThunk';
 import { AppDispatch } from 'store';
 import Navigation from 'components/Navigation';
+import { Input } from '@prism/dropcloth/dist/components/input/input';
+import { Button } from '@prism/dropcloth/dist/components/button/button';
 
 const Labor = () => {
   const [length, setLength] = useState(0);

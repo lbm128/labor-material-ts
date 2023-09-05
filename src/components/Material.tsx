@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Button, Input } from '@prism/dropcloth';
 
 import { addMaterialAsyncThunk } from 'store/thunks/materialThunk';
 import { AppDispatch } from 'store';
 import Navigation from 'components/Navigation';
+import { Button } from '@prism/dropcloth/dist/components/button/button';
+import { Input } from '@prism/dropcloth/dist/components/input/input';
 
 const Material = () => {
   const [length, setLength] = useState(0);

@@ -8,10 +8,11 @@ describe('Labor', () => {
   test('should render properly', async () => {
     renderWithProviders(<Labor />);
 
-    await act(
-      async () =>
-        await waitFor(() => expect(screen.getByText(/sqft/i)).toBeInTheDocument())
-    );
+    expect(screen.getByText(/sqft/i)).toBeInTheDocument();
+    // await act(
+    //   async () =>
+    //     await waitFor(() => expect(screen.getByText(/sqft/i)).toBeInTheDocument())
+    // );
   });
 
   test('calculate button should not be disabled', async () => {
@@ -19,9 +20,10 @@ describe('Labor', () => {
 
     const calculateButton = screen.getByRole('button', {name: /calculate/i});
 
-    await act(
-      async () =>
-        await waitFor(() => expect(calculateButton).not.toBeDisabled())
-    );
+    expect(calculateButton).not.toBeDisabled();
+    // await act(
+    //   async () =>
+    //     await waitFor(() => expect(calculateButton).not.toBeDisabled())
+    // );
   });
 });
