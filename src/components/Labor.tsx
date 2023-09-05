@@ -16,7 +16,6 @@ const Labor = () => {
 
   const handleCalculate = () => {
     const calculatedTotal: string = (length * width * price).toFixed(2);
-    console.log(calculatedTotal);
     setCalculated(calculatedTotal);
 
     dispatch(addLaborAsyncThunk(calculatedTotal));

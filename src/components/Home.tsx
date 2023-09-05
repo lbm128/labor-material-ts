@@ -32,9 +32,9 @@ const Home = () => {
           <p className='swdc-typeset-ui-2 swdc-mb-[10px]'>
             <b>Labor History</b>
           </p>
-          {laborHistory.map((entry: string, i: number) => (
+          {laborHistory.length && laborHistory.map((entry: string, i: number) => (
             <p className='swdc-typeset-ui-3 swdc-p-[5px]' key={i}>
-              ${entry}
+              {entry}
             </p>
           ))}
         </div>
@@ -42,7 +42,7 @@ const Home = () => {
           <p className='swdc-typeset-ui-2 swdc-mb-[10px]'>
             <b>Material History</b>
           </p>
-          {materialHistory.map((entry: string, i: number) => (
+          {materialHistory.length && materialHistory.map((entry: string, i: number) => (
             <p className='swdc-typeset-ui-3 swdc-p-[5px]' key={i}>
               {entry} gallons
             </p>
