@@ -31,12 +31,16 @@ describe('Home', () => {
   test('should have 0 material history values', async () => {
     const { store } = renderWithProviders(<BrowserRouter><Home /></BrowserRouter>, { preloadedState: noMaterialState });
     
-    expect(store.getState().material.materialHistory.length).toBe(0);
+    await waitFor(async () => {
+      expect(store.getState().material.materialHistory.length).toBe(0);
+    });
   });
 
   test('should have 0 labor history values', async () => {
     const { store } = renderWithProviders(<BrowserRouter><Home /></BrowserRouter>, { preloadedState: noLaborState });
     
-    expect(store.getState().labor.laborHistory.length).toBe(0);
+    await waitFor(async () => {
+      expect(store.getState().labor.laborHistory.length).toBe(0);
+    });
   });
 });

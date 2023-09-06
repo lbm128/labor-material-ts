@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { rest } from 'msw';
 import { API_BASE } from 'common/constants/api';
 

@@ -50,9 +50,7 @@
     ],
     "coverageReporters": [
       "lcov",
-      "text",
-      "json",
-      "html"
+      "text"
     ],
     "moduleNameMapper": {
       "swiper/css": "swiper/swiper.min.css"
