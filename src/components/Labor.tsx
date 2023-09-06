@@ -55,18 +55,18 @@ const Labor = () => {
       </h1>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>$/sqft</p>
-        <input value={price} onChange={(e: any) => handlePrice(e)} className='swdc-input swdc-w-[initial!important]' />
+        <input aria-label='dollarSqft' value={price} onChange={(e: any) => handlePrice(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Length</p>
-        <input value={length} onChange={(e: any) => handleLength(e)} className='swdc-input swdc-w-[initial!important]' />
+        <input aria-label='length' value={length} onChange={(e: any) => handleLength(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='input-container'>
         <p className='swdc-typeset-ui-2'>Width</p>
-        <input value={width} onChange={(e: any) => handleWidth(e)} className='swdc-input swdc-w-[initial!important]' />
+        <input aria-label='width' value={width} onChange={(e: any) => handleWidth(e)} className='swdc-input swdc-w-[initial!important]' />
       </div>
       <div className='swdc-flex swdc-justify-center swdc-my-[30px] swdc-mx-[auto] swdc-gap-[20px]'>
-        <button onClick={handleCalculate}>
+        <button aria-label='calculate' onClick={handleCalculate}>
           Calculate
         </button>
         <button onClick={handleReset}>

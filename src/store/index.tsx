@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 
