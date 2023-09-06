@@ -42,19 +42,27 @@ describe('Labor', () => {
       name: /width/i,
     });
 
-    await waitFor(async () => await user.type(dollarSqftInput, '7'));
+    await waitFor(async () => {
+      await user.type(dollarSqftInput, '7');
+    });
     await waitFor(() => expect(dollarSqftInput).toHaveValue('7'));
 
-    await waitFor(async () => await user.type(lengthInput, '8'));
+    await waitFor(async () => {
+      await user.type(lengthInput, '8');
+    });
     await waitFor(() => expect(lengthInput).toHaveValue('8'));
 
-    await waitFor(async () => await user.type(widthInput, '9'));
+    await waitFor(async () => {
+      await user.type(widthInput, '9');
+    });
     await waitFor(() => expect(widthInput).toHaveValue('9'));
 
     await waitFor(async () => {
       await user.click(calculateButton);
     });
 
-    await waitFor(async () => expect(await screen.findByText(/504.00/i)).toBeInTheDocument());
+    await waitFor(async () => {
+      expect(await screen.findByText(/504.00/i)).toBeInTheDocument();
+    });
   });
 });
