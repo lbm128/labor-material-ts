@@ -7,7 +7,6 @@ export const addLaborAsyncThunk = createAsyncThunk<any, string>(
   'labor/addLabor',
   (calculatedTotal, { dispatch, getState }) => {
     addLaborApi({ calculatedTotal }).then(({ data }) => {
-      console.log('data is: ', data);
       dispatch(laborActions.addLaborHistory(data));
     });
   }
