@@ -5,7 +5,6 @@ import { Button } from '@prism/dropcloth/dist/components/button/button';
 import { addLaborAsyncThunk } from 'store/thunks/laborThunk';
 import { AppDispatch } from 'store';
 import Navigation from 'components/Navigation';
-import { Field } from 'formik';
 
 const Labor = () => {
   const [length, setLength] = useState(0);
