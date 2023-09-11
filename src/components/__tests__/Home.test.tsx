@@ -1,11 +1,9 @@
-import { act, screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-
 
 import { renderWithProviders } from 'common/tests/utils';
 import laborPreloadedState from 'store/preloaded-states/labor';
 import materialPreloadedState from 'store/preloaded-states/material';
-
 import Home from 'components/Home';
 
 const emptyLaborHistory: string[] = [];
