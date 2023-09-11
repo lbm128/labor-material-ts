@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 // import { Button } from '@prism/dropcloth/dist/components/button/button';
 // import { Menu } from '@prism/dropcloth/dist/components/menu/menu';
 // import { MenuContent } from '@prism/dropcloth/dist/components/menu/menuContent';
