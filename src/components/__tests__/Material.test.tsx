@@ -21,6 +21,51 @@ describe('Material', () => {
     expect(calculateButton).not.toBeDisabled();
   });
 
+  // test('should display 504 when calculate button is pressed with specific inputs', async () => {
+  //   const user = userEvent.setup();
+
+  //   renderWithProviders(<BrowserRouter><Material /></BrowserRouter>);
+
+  //   const calculateButton = screen.getByRole('button', {
+  //     name: /calculate/i,
+  //   });
+
+  //   const sqftGallonInput = screen.getByRole('textbox', {
+  //     name: /sqftGallon/i,
+  //   });
+
+  //   const lengthInput = screen.getByRole('textbox', {
+  //     name: /length/i,
+  //   });
+
+  //   const widthInput = screen.getByRole('textbox', {
+  //     name: /width/i,
+  //   });
+
+  //   await waitFor(async () => {
+  //     await user.type(sqftGallonInput, '300');
+  //   });
+  //   await waitFor(() => expect(sqftGallonInput).toHaveValue('300'));
+
+  //   await waitFor(async () => {
+  //     await user.type(lengthInput, '10');
+  //   });
+  //   await waitFor(() => expect(lengthInput).toHaveValue('10'));
+
+  //   await waitFor(async () => {
+  //     await user.type(widthInput, '10');
+  //   });
+  //   await waitFor(() => expect(widthInput).toHaveValue('10'));
+
+  //   await waitFor(async () => {
+  //     await user.click(calculateButton);
+  //   });
+
+  //   await waitFor(async () => {
+  //     expect(await screen.findByText(/0.33/i)).toBeInTheDocument();
+  //   });
+  // });
+
   test('should display 504 when calculate button is pressed with specific inputs', async () => {
     const user = userEvent.setup();
 
@@ -42,27 +87,23 @@ describe('Material', () => {
       name: /width/i,
     });
 
-    await waitFor(async () => {
-      await user.type(sqftGallonInput, '300');
-    });
+    // await waitFor(async () => {
+    user.type(sqftGallonInput, '300');
+    // });
     await waitFor(() => expect(sqftGallonInput).toHaveValue('300'));
 
-    await waitFor(async () => {
-      await user.type(lengthInput, '10');
-    });
+    // await waitFor(async () => {
+    user.type(lengthInput, '10');
+    // });
     await waitFor(() => expect(lengthInput).toHaveValue('10'));
 
-    await waitFor(async () => {
-      await user.type(widthInput, '10');
-    });
+    // await waitFor(async () => {
+    user.type(widthInput, '10');
+    // });
     await waitFor(() => expect(widthInput).toHaveValue('10'));
 
-    await waitFor(async () => {
-      await user.click(calculateButton);
-    });
+    await waitFor(async () => { await user.click(calculateButton); });
 
-    await waitFor(async () => {
-      expect(await screen.findByText(/0.33/i)).toBeInTheDocument();
-    });
+    await waitFor(async () => { expect(await screen.findByText(/0.33/i)).toBeInTheDocument(); });
   });
 });
