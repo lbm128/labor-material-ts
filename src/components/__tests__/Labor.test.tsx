@@ -58,4 +58,45 @@ describe('Labor', () => {
 
     await waitFor(() => expect(screen.getByText(/504.00/i)).toBeInTheDocument());
   });
+
+  test('should reset inputs to 0 when clicking Reset', async () => {
+    const user = userEvent.setup();
+
+    renderWithProviders(
+      <BrowserRouter>
+        <Labor />
+      </BrowserRouter>
+    );
+
+    const resetButton = screen.getByRole('button', {
+      name: /reset/i,
+    });
+
+    const dollarSqftInput = screen.getByRole('textbox', {
+      name: /dollarSqft/i,
+    });
+
+    const lengthInput = screen.getByRole('textbox', {
+      name: /length/i,
+    });
+
+    const widthInput = screen.getByRole('textbox', {
+      name: /width/i,
+    });
+
+    user.type(dollarSqftInput, '7');
+    await waitFor(() => expect(dollarSqftInput).toHaveValue('7'));
+
+    user.type(lengthInput, '8');
+    await waitFor(() => expect(lengthInput).toHaveValue('8'));
+
+    user.type(widthInput, '9');
+    await waitFor(() => expect(widthInput).toHaveValue('9'));
+
+    await waitFor(() => user.click(resetButton));
+
+    await waitFor(() => expect(dollarSqftInput).toHaveValue('0'));
+    await waitFor(() => expect(lengthInput).toHaveValue('0'));
+    await waitFor(() => expect(widthInput).toHaveValue('0'));
+  });
 });

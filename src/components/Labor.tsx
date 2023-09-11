@@ -68,7 +68,7 @@ const Labor = () => {
         <Button variant='filled' aria-label='calculate' onClick={handleCalculate}>
           Calculate
         </Button>
-        <Button variant='outlined' onClick={handleReset}>
+        <Button variant='outlined' aria-label='reset' onClick={handleReset}>
           Reset
         </Button>
       </div>

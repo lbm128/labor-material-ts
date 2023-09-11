@@ -50,8 +50,45 @@ describe('Material', () => {
     user.type(widthInput, '10');
     await waitFor(() => expect(widthInput).toHaveValue('10'));
 
-    await waitFor(async () => { await user.click(calculateButton); });
+    await waitFor(() => user.click(calculateButton));
 
-    await waitFor(async () => { expect(await screen.findByText(/0.33/i)).toBeInTheDocument(); });
+    await waitFor(() => expect(screen.getByText(/0.33/i)).toBeInTheDocument());
+  });
+
+  test('should reset inputs to 0 when clicking Reset', async () => {
+    const user = userEvent.setup();
+
+    renderWithProviders(<BrowserRouter><Material /></BrowserRouter>);
+
+    const resetButton = screen.getByRole('button', {
+      name: /reset/i,
+    });
+
+    const sqftGallonInput = screen.getByRole('textbox', {
+      name: /sqftGallon/i,
+    });
+
+    const lengthInput = screen.getByRole('textbox', {
+      name: /length/i,
+    });
+
+    const widthInput = screen.getByRole('textbox', {
+      name: /width/i,
+    });
+
+    user.type(sqftGallonInput, '300');
+    await waitFor(() => expect(sqftGallonInput).toHaveValue('300'));
+
+    user.type(lengthInput, '10');
+    await waitFor(() => expect(lengthInput).toHaveValue('10'));
+
+    user.type(widthInput, '10');
+    await waitFor(() => expect(widthInput).toHaveValue('10'));
+
+    await waitFor(() => user.click(resetButton));
+
+    await waitFor(() => expect(sqftGallonInput).toHaveValue('0'));
+    await waitFor(() => expect(lengthInput).toHaveValue('0'));
+    await waitFor(() => expect(widthInput).toHaveValue('0'));
   });
 });
