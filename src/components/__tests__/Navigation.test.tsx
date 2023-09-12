@@ -15,7 +15,7 @@ describe('Labor', () => {
 
     const navMenu = screen.getByTitle('navMenu');
 
-    expect(navMenu.classList.contains('swdc-hidden')).toBe(true);
+    expect(navMenu).toHaveClass('swdc-hidden');
   });
 
   test('should show nav menu when clicking Menu button', async () => {
@@ -29,7 +29,7 @@ describe('Labor', () => {
 
     const navMenu = screen.getByTitle('navMenu');
 
-    expect(navMenu.classList.contains('swdc-hidden')).toBe(true);
+    expect(navMenu).toHaveClass('swdc-hidden');
 
     const menuButton = screen.getByRole('button', {
       name: /menu/i,
@@ -37,6 +37,6 @@ describe('Labor', () => {
 
     await waitFor(() => user.click(menuButton));
 
-    await waitFor(() => expect(navMenu.classList.contains('swdc-hidden')).toBe(false));
+    await waitFor(() => expect(navMenu).not.toHaveClass('swdc-hidden'));
   });
 });
