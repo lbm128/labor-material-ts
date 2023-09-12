@@ -7,15 +7,23 @@ import Labor from 'components/Labor';
 
 describe('Labor', () => {
   test('should render properly', async () => {
-    renderWithProviders(<BrowserRouter><Labor /></BrowserRouter>);
+    renderWithProviders(
+      <BrowserRouter>
+        <Labor />
+      </BrowserRouter>
+    );
 
     expect(screen.getByText(/sqft/i)).toBeInTheDocument();
   });
 
   test('calculate button should not be disabled', async () => {
-    renderWithProviders(<BrowserRouter><Labor /></BrowserRouter>);
+    renderWithProviders(
+      <BrowserRouter>
+        <Labor />
+      </BrowserRouter>
+    );
 
-    const calculateButton = screen.getByRole('button', {name: /calculate/i});
+    const calculateButton = screen.getByRole('button', { name: /calculate/i });
 
     expect(calculateButton).not.toBeDisabled();
   });

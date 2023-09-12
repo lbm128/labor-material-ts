@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@prism/dropcloth/dist/components/button/button';
@@ -13,8 +12,8 @@ const Navigation = () => {
   return (
     <div className='navigation'>
       <div>
-        <Button variant='outlined' className='swdc-button swdc-button--outlined swdc-mt-[30px]' onClick={handleShowMenu}>Menu</Button>
-        <div className={`test-menu swdc-p-[15px] swdc-rounded-md swdc-border-2 swdc-w-[40%] swdc-mt-[10px] swdc-mx-auto ${showMenu ? '' : 'swdc-hidden'}`}>
+        <Button variant='outlined' aria-label='menu' className='swdc-button swdc-button--outlined swdc-mt-[30px]' onClick={handleShowMenu}>Menu</Button>
+        <div title='navMenu' className={`test-menu swdc-p-[15px] swdc-rounded-md swdc-border-2 swdc-w-[40%] swdc-mt-[10px] swdc-mx-auto ${showMenu ? '' : 'swdc-hidden'}`}>
           <div className='swdc-flex swdc-flex-col swdc-gap-[15px] '>
             <div className='nav-link-container'>
               <Link to='/' className='swdc-button swdc-button--filled' data-text='Home'>

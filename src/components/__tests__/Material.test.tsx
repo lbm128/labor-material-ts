@@ -7,15 +7,23 @@ import Material from 'components/Material';
 
 describe('Material', () => {
   test('should render properly', async () => {
-    renderWithProviders(<BrowserRouter><Material /></BrowserRouter>);
+    renderWithProviders(
+      <BrowserRouter>
+        <Material />
+      </BrowserRouter>
+    );
 
     expect(screen.getByText(/sqft/i)).toBeInTheDocument();
   });
 
   test('calculate button should not be disabled', async () => {
-    renderWithProviders(<BrowserRouter><Material /></BrowserRouter>);
+    renderWithProviders(
+      <BrowserRouter>
+        <Material />
+      </BrowserRouter>
+    );
 
-    const calculateButton = screen.getByRole('button', {name: /calculate/i});
+    const calculateButton = screen.getByRole('button', { name: /calculate/i });
 
     expect(calculateButton).not.toBeDisabled();
   });
@@ -23,7 +31,11 @@ describe('Material', () => {
   test('should display 504 when calculate button is pressed with specific inputs', async () => {
     const user = userEvent.setup();
 
-    renderWithProviders(<BrowserRouter><Material /></BrowserRouter>);
+    renderWithProviders(
+      <BrowserRouter>
+        <Material />
+      </BrowserRouter>
+    );
 
     const calculateButton = screen.getByRole('button', {
       name: /calculate/i,
@@ -58,7 +70,11 @@ describe('Material', () => {
   test('should reset inputs to 0 when clicking Reset', async () => {
     const user = userEvent.setup();
 
-    renderWithProviders(<BrowserRouter><Material /></BrowserRouter>);
+    renderWithProviders(
+      <BrowserRouter>
+        <Material />
+      </BrowserRouter>
+    );
 
     const resetButton = screen.getByRole('button', {
       name: /reset/i,

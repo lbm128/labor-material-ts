@@ -11,30 +11,44 @@ const emptyMaterialHistory: string[] = [];
 
 const noMaterialState = {
   labor: laborPreloadedState,
-  material: { materialHistory: emptyMaterialHistory }
-}
+  material: { materialHistory: emptyMaterialHistory },
+};
 
 const noLaborState = {
   labor: { laborHistory: emptyLaborHistory },
-  material: materialPreloadedState
-}
+  material: materialPreloadedState,
+};
 
 describe('Home', () => {
   test('should render properly', async () => {
-    renderWithProviders(<BrowserRouter><Home /></BrowserRouter>);
+    renderWithProviders(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    );
 
     expect(screen.getByText(/page/i)).toBeInTheDocument();
   });
 
   test('should have 0 material history values', async () => {
-    const { store } = renderWithProviders(<BrowserRouter><Home /></BrowserRouter>, { preloadedState: noMaterialState });
-    
+    const { store } = renderWithProviders(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>,
+      { preloadedState: noMaterialState }
+    );
+
     expect(store.getState().material.materialHistory.length).toBe(0);
   });
 
   test('should have 0 labor history values', async () => {
-    const { store } = renderWithProviders(<BrowserRouter><Home /></BrowserRouter>, { preloadedState: noLaborState });
-    
+    const { store } = renderWithProviders(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>,
+      { preloadedState: noLaborState }
+    );
+
     expect(store.getState().labor.laborHistory.length).toBe(0);
   });
 });
