@@ -62,7 +62,7 @@ describe('Labor', () => {
     user.type(widthInput, '9');
     await waitFor(() => expect(widthInput).toHaveValue('9'));
 
-    await waitFor(() => user.click(calculateButton));
+    user.click(calculateButton)
 
     await waitFor(() => expect(screen.getByText(/504.00/i)).toBeInTheDocument());
   });
@@ -101,7 +101,7 @@ describe('Labor', () => {
     user.type(widthInput, '9');
     await waitFor(() => expect(widthInput).toHaveValue('9'));
 
-    await waitFor(() => user.click(resetButton));
+    user.click(resetButton);
 
     await waitFor(() => expect(dollarSqftInput).toHaveValue('0'));
     await waitFor(() => expect(lengthInput).toHaveValue('0'));

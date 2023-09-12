@@ -62,7 +62,7 @@ describe('Material', () => {
     user.type(widthInput, '10');
     await waitFor(() => expect(widthInput).toHaveValue('10'));
 
-    await waitFor(() => user.click(calculateButton));
+    user.click(calculateButton);
 
     await waitFor(() => expect(screen.getByText(/0.33/i)).toBeInTheDocument());
   });
@@ -101,7 +101,7 @@ describe('Material', () => {
     user.type(widthInput, '10');
     await waitFor(() => expect(widthInput).toHaveValue('10'));
 
-    await waitFor(() => user.click(resetButton));
+    user.click(resetButton);
 
     await waitFor(() => expect(sqftGallonInput).toHaveValue('0'));
     await waitFor(() => expect(lengthInput).toHaveValue('0'));

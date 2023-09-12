@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { act, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 
@@ -35,7 +35,7 @@ describe('Labor', () => {
       name: /menu/i,
     });
 
-    await waitFor(() => user.click(menuButton));
+    user.click(menuButton);
 
     await waitFor(() => expect(navMenu).not.toHaveClass('swdc-hidden'));
   });
